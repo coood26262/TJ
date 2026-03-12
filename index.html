@@ -10,19 +10,19 @@
 <style>
   :root {
     --bg: #ffffff;
-    --panel: #fafafa;
+    --panel: #f5f8fc;
     --card: #ffffff;
-    --line: #e8e8e8;
+    --line: #dde6f0;
     --text: #1d1d1f;
     --muted: #6e6e73;
-    --brand: #E31837;
-    --brand2: #E31837;
-    --brandGlow: rgba(227,24,55,.25);
-    --brandSoft: rgba(227,24,55,.08);
-    --brandFaint: rgba(227,24,55,.04);
+    --brand: #0071CE;
+    --brand2: #0071CE;
+    --brandGlow: rgba(0,113,206,.25);
+    --brandSoft: rgba(0,113,206,.08);
+    --brandFaint: rgba(0,113,206,.04);
     --success: #34C759;
     --warning: #FF9500;
-    --shadow: rgba(227,24,55,.08);
+    --shadow: rgba(0,113,206,.08);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,18 +42,18 @@
   .bg-glow::before {
     content: ''; position: absolute; top: -120px; left: -120px;
     width: 500px; height: 500px; border-radius: 50%;
-    background: rgba(227,24,55,0.10); filter: blur(120px);
+    background: rgba(0,113,206,0.10); filter: blur(120px);
   }
   .bg-glow::after {
     content: ''; position: absolute; bottom: -60px; right: -60px;
     width: 350px; height: 350px; border-radius: 50%;
-    background: rgba(227,24,55,0.07); filter: blur(100px);
+    background: rgba(0,113,206,0.07); filter: blur(100px);
   }
   .grid-bg {
     position: fixed; inset: 0; pointer-events: none;
     background:
-      linear-gradient(to right, rgba(227,24,55,.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(227,24,55,.03) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0,113,206,.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,113,206,.03) 1px, transparent 1px);
     background-size: 44px 44px;
     mask-image: linear-gradient(to bottom, black 30%, transparent 80%);
     -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 80%);
@@ -76,7 +76,7 @@
     overflow: hidden; margin: 0 auto 44px;
     background: var(--card);
     border: 1px solid var(--line);
-    box-shadow: 0 8px 30px rgba(227,24,55,.18), 0 2px 8px rgba(227,24,55,.10);
+    box-shadow: 0 8px 30px rgba(0,113,206,.18), 0 2px 8px rgba(0,113,206,.10);
     transition: transform 0.3s;
   }
   .s1-logo:hover { transform: scale(1.05); }
@@ -108,7 +108,7 @@
   }
   .slider-progress {
     position: absolute; top: 0; left: 0; height: 100%;
-    background: linear-gradient(90deg, rgba(227,24,55,.10), rgba(227,24,55,.20));
+    background: linear-gradient(90deg, rgba(0,113,206,.10), rgba(0,113,206,.20));
     width: 0%; transition: width 0.08s;
   }
   .slider-text {
@@ -119,7 +119,7 @@
   }
   .slider-thumb {
     position: absolute; top: 4px; left: 4px; width: 56px; height: 56px;
-    background: linear-gradient(135deg, var(--brand), var(--brand2));
+    background: var(--brand);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     cursor: grab;
@@ -134,7 +134,7 @@
     50% { transform: translateX(5px); }
   }
 
-  .float-icon { position: absolute; pointer-events: none; color: rgba(227,24,55,.12); }
+  .float-icon { position: absolute; pointer-events: none; color: rgba(0,113,206,.12); }
   .float-icon.i1 { top: -90px; right: 16px; animation: floatA 6s ease-in-out infinite; }
   .float-icon.i2 { bottom: -110px; left: -6px; animation: floatB 7s ease-in-out infinite; }
   .float-icon svg { width: 44px; height: 44px; }
@@ -152,9 +152,9 @@
 
   .check-circle {
     width: 100px; height: 100px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--brand), var(--brand2));
+    background: var(--brand);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 0 50px var(--brandGlow), 0 0 80px rgba(227,24,55,.15);
+    box-shadow: 0 0 50px var(--brandGlow), 0 0 80px rgba(0,113,206,.15);
     margin: 0 auto 28px; animation: scaleIn 0.45s cubic-bezier(.175,.885,.32,1.275);
   }
   .check-circle svg { width: 48px; height: 48px; stroke: #fff; fill: none; stroke-width: 3; }
@@ -223,7 +223,7 @@
   }
   .s3-fill {
     height: 100%; width: 0;
-    background: linear-gradient(90deg, var(--brand), var(--brand2));
+    background: var(--brand);
     box-shadow: 0 0 15px var(--brandGlow);
     transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -251,28 +251,28 @@
   }
   .s3-li:last-child { border-bottom: 0; }
   .s3-li:hover {
-    background: rgba(227,24,55,.03); margin: 0 -8px; padding-left: 24px; padding-right: 24px;
+    background: rgba(0,113,206,.03); margin: 0 -8px; padding-left: 24px; padding-right: 24px;
     border-radius: 12px;
   }
   .s3-check {
     display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px;
-    border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--brand2));
+    border-radius: 8px; background: var(--brand);
     font-size: 14px; font-weight: 700; color: #ffffff; flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(227,24,55,.25);
+    box-shadow: 0 2px 8px rgba(0,113,206,.25);
   }
   .s3-li b { display: block; color: var(--text); font-size: 15px; margin-bottom: 4px; font-weight: 600; }
   .s3-muted { color: var(--muted); font-size: 13px; line-height: 1.4; }
 
   .s3-offer {
-    background: linear-gradient(135deg, #fff5f5 0%, #fff0f0 100%);
+    background: linear-gradient(135deg, #f0f6fc 0%, #e8f1fb 100%);
     border: 2px solid var(--brand); border-radius: 18px; padding: 18px; margin-top: 20px; text-align: left;
     position: relative; overflow: hidden;
-    box-shadow: 0 4px 12px rgba(227,24,55,.15);
+    box-shadow: 0 4px 12px rgba(0,113,206,.15);
   }
 
   .s3-cta {
     display: block; text-align: center;
-    background: linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
+    background: var(--brand);
     color: #ffffff !important; font-weight: 700; border-radius: 18px; padding: 20px; margin-top: 24px; font-size: 18px;
     text-decoration: none;
     box-shadow: 0 8px 20px var(--brandGlow), 0 2px 6px rgba(0,0,0,.1);
@@ -288,6 +288,7 @@
   }
   .s3-cta:hover {
     transform: translateY(-2px);
+    background: #005ba6;
     box-shadow: 0 12px 25px var(--brandGlow), 0 4px 8px rgba(0,0,0,.15);
   }
   .s3-cta:hover::before { left: 100%; }
@@ -370,12 +371,12 @@
     </div>
   </div>
 
-  <!-- ===== SCREEN 3: SHEIN REWARDS ===== -->
+  <!-- ===== SCREEN 3 ===== -->
   <div id="screen3">
     <div class="s3-wrap">
-      <img class="s3-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/1280px-Costco_Wholesale_logo_2010-10-26.svg.png" alt="Costco Logo" />
+      <img class="s3-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Walmart_logo_%282008%29.svg" alt="Costco Logo" />
 
-      <div class="s3-headline">Follow these steps to get your<br>Shein rewards!</div>
+      <div class="s3-headline">Follow these steps to get your<br>Walmart discount!</div>
 
       <div class="s3-stats">
         <div class="s3-stat">
@@ -416,7 +417,7 @@
       
       </div>
 
-      <a id="cta" class="s3-cta" href="https://linkthem.net/aff_c?offer_id=1323&aff_id=2609">
+      <a id="cta" class="s3-cta" href="https://giftclick.org/aff_c?offer_id=564&aff_id=2609">
         → CLAIM YOUR REWARDS
       </a>
 
