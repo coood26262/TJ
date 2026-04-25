@@ -374,21 +374,21 @@
   <!-- ===== SCREEN 3 ===== -->
   <div id="screen3">
     <div class="s3-wrap">
-      <img class="s3-logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Walmart_logo_%282008%29.svg" alt="Costco Logo" />
+      <img class="s3-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Costco_Wholesale_logo_2010-10-26.svg/3840px-Costco_Wholesale_logo_2010-10-26.svg.png" alt="Costco Logo" />
 
-      <div class="s3-headline">Follow these steps to get your<br>Walmart discount!</div>
+      <div class="s3-headline">Follow these steps to get your<br>Costco discount!</div>
 
       <div class="s3-stats">
         <div class="s3-stat">
-          <span class="s3-stat-num">22,847</span>
+          <span class="s3-stat-num">12,847</span>
           <div class="s3-stat-label">Active Users</div>
         </div>
         <div class="s3-stat">
-          <span class="s3-stat-num">$5.2M</span>
+          <span class="s3-stat-num">$3.2M</span>
           <div class="s3-stat-label">Rewards Paid</div>
         </div>
         <div class="s3-stat">
-          <span class="s3-stat-num">$750</span>
+          <span class="s3-stat-num">$600</span>
           <div class="s3-stat-label">Max Reward</div>
         </div>
       </div>
@@ -499,32 +499,6 @@
     var notifIndex = 0;
     var isShowingNotif = false;
 
-    function startNotifications() { showNotif(); }
-
-    function showNotif() {
-      if (isShowingNotif) return;
-      isShowingNotif = true;
-      var box = document.getElementById('notifBox');
-      box.innerHTML = '';
-
-      var n = document.createElement('div');
-      n.className = 'notif';
-      n.innerHTML = notifications[notifIndex];
-      box.appendChild(n);
-
-      requestAnimationFrame(function() { n.classList.add('show'); });
-
-      setTimeout(function() {
-        n.classList.remove('show');
-        setTimeout(function() {
-          if (box.contains(n)) box.removeChild(n);
-          isShowingNotif = false;
-          notifIndex = (notifIndex + 1) % notifications.length;
-          var nextDelay = 5000 + Math.random() * 5000;
-          setTimeout(showNotif, nextDelay);
-        }, 5000);
-      }, 5000);
-    }
 
     document.addEventListener('mousemove', function(e) {
       var cards = document.querySelectorAll('.s3-card, .s3-offer');
